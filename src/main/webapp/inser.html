@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Information Form</title>
+</head>
+<style>
+	body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+	}
+
+	.container {
+	    text-align: center;
+	    background: white;
+	    padding: 30px;
+	    border-radius: 10px;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    width: 80%;
+	    max-width: 500px;
+	}
+	
+	h1 {
+	    margin-bottom: 20px;
+	    color: #333;
+	}
+	
+	form {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	label {
+	    margin-top: 10px;
+	    font-weight: bold;
+	}
+	
+	input, select, textarea, button {
+	    margin-top: 10px;
+	    padding: 10px;
+	    width: 100%;
+	    border: 1px solid #ddd;
+	    border-radius: 5px;
+	    box-sizing: border-box;
+	}
+	
+	button {
+	    background-color: #ff7e5f;
+	    color: white;
+	    border: none;
+	    cursor: pointer;
+	    transition: background 0.3s;
+	}
+	
+	button:hover {
+	    background-color: #feb47b;
+	}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Animal Information Form</h1>
+        <form id="animalForm" action = "insert" method = "get" >
+            <label for="name">Name of Animal:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="mammal">Mammal</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+                <option value="reptile">Reptile</option>
+                <option value="amphibian">Amphibian</option>
+                <option value="insect">Insect</option>
+            </select>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="lifeExpectancy">Life Expectancy:</label>
+            <select id="lifeExpectancy" name="lifeExpectancy" required>
+                <option value="2-5">2-5 years</option>
+                <option value="5-10">5-10 years</option>
+                <option value="10+">10+ years</option>
+                
+            </select>
+
+            <label for="captcha">Solve: 3 + 7</label>
+            <input type="text" id="captcha" name="captcha" required>
+
+            <button type="submit" onclick="display()">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+    	
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('animalForm');
+
+        form.addEventListener('submit', function(event) {
+            if (!validateForm()) {
+                event.preventDefault();
+                alert('Please Enter valid Captcha...');
+            }
+        });	
+
+        function validateForm() {
+            const username = document.getElementById('captcha').value;
+			let n = Number.parseInt(username);
+            if (n != 10) {
+                return false;
+            }
+
+            return true;
+        }
+    });
+    
+    </script>
+    
+</body>
+</html>

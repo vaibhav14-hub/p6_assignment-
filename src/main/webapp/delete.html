@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Animal Entities</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .animal-form {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-group input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #ff6666;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #ff4d4d;
+    }
+
+    .animal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    .animal-info {
+        flex: 1;
+    }
+
+    .animal-name {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .animal-description {
+        color: #666;
+    }
+
+    .delete-btn {
+        background-color: #ff6666;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .delete-btn:hover {
+        background-color: #ff4d4d;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        .animal {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+        .animal-info {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Enter the Animal Entities you want to delete </h1>
+    
+    <form class="animal-form" action="delete" method="get">
+        <div class="form-group">
+            <label for="animalname">Animal Name:</label>
+            <input type="text" id="animalname" name="animalname" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Delete">
+        </div>
+    </form>
+
+
+    
+  
+
+
+</div>
+
+</body>
+</html>
